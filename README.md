@@ -2,57 +2,42 @@
 
 ## 📌 Overview
 
-This project predicts a student's final exam score based on:
+This project predicts a student's exam score based on:
 
 - Weekly Study Hours
 - Attendance Percentage
 - Class Participation
 
-It uses multiple Machine Learning models and compares their performance to select the best one.
+It uses Machine Learning models and selects the best one based on performance.
 
 ---
 
-## 🧠 Problem Statement
+## 🧠 Problem
 
-Educational institutions often want to predict student performance early to provide support.  
-This project builds a predictive model to estimate student scores based on behavioral and academic factors.
+Educational institutions need a way to identify students who may need support early.  
+This project helps estimate student performance using study behavior data.
 
 ---
 
 ## 📊 Dataset
 
-The dataset contains the following features:
+Features used:
 
 - `weekly_self_study_hours`
 - `attendance_percentage`
 - `class_participation`
-- `total_score` (Target)
+
+Target:
+
+- `total_score`
 
 ---
 
 ## ⚙️ Models Used
 
-### 1️⃣ Linear Regression
-
-- Assumes a linear relationship between input features and output
-- Simple and fast
-- Works well when data is linear
-
----
-
-### 2️⃣ Decision Tree Regressor
-
-- Splits data into multiple conditions
-- Captures non-linear relationships
-- Can overfit if not controlled
-
----
-
-### 3️⃣ Random Forest Regressor ✅ (Final Model)
-
-- Ensemble of multiple decision trees
-- Reduces overfitting
-- Handles complex patterns better
+- Linear Regression
+- Decision Tree
+- Random Forest (Final Model)
 
 ---
 
@@ -66,25 +51,22 @@ The dataset contains the following features:
 
 ---
 
-## 🏆 Best Model: Random Forest
+## 🏆 Final Model: Random Forest
 
-### Why Random Forest?
+Selected because:
 
-- Lowest RMSE → better at handling large errors
-- Highest R² → explains data well
-- More robust than Decision Tree
-- Captures non-linear relationships better than Linear Regression
-
-👉 Even though Linear Regression is close, Random Forest performs slightly better and is more reliable.
+- Lowest RMSE (better accuracy on large errors)
+- High R² score
+- Handles non-linear relationships better
 
 ---
 
 ## 🚀 Features
 
 - Real-time prediction using Streamlit
-- Interactive UI with sliders
-- Instant feedback (Excellent / Average / Needs Improvement)
-- Data-driven model comparison
+- Interactive UI
+- Instant performance feedback
+- What-if analysis and insights
 
 ---
 
