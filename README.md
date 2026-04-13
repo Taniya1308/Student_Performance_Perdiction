@@ -51,13 +51,18 @@ Target:
 
 ---
 
-## 🏆 Final Model: Random Forest
+## 🏆 Final Model: Linear Regression
 
-Selected because:
+Although Random Forest showed slightly better performance, the difference was minimal.
 
-- Lowest RMSE (better accuracy on large errors)
-- High R² score
-- Handles non-linear relationships better
+Linear Regression was selected because:
+
+- Comparable accuracy (very close RMSE and R²)
+- Faster training and prediction
+- Simpler and more interpretable
+- Suitable for real-time applications
+
+👉 Since the dataset shows a near-linear relationship, Linear Regression performs efficiently without unnecessary complexity.
 
 ---
 
