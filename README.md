@@ -1,89 +1,105 @@
-# Student_Performance_Perdiction
+# 🎓 Student Performance Predictor
 
-A machine learning project that predicts students’ final scores based on multiple factors such as study hours, attendance, previous marks, sleep hours, and social media usage. Built with **Python**, **scikit-learn**, and **Streamlit** for an interactive web app.
+## 📌 Overview
 
----
+This project predicts a student's final exam score based on:
 
-## 1. Project Overview
+- Weekly Study Hours
+- Attendance Percentage
+- Class Participation
 
-The goal of this project is to explore **machine learning for educational data** and create a tool that can estimate a student’s performance based on their habits and past academic records.  
-Student performance depends on multiple factors, and this project models these relationships using **Linear Regression**.
-
----
-
-## 2. Problem Definition
-
-Predicting a student’s final score is a **regression problem** because the output (score) is continuous.  
-Input features:
-
-| Feature              | Description                             |
-| -------------------- | --------------------------------------- |
-| `study_hours`        | Number of hours a student studies daily |
-| `attendance`         | Percentage of classes attended          |
-| `previous_marks`     | Marks scored in previous exams          |
-| `sleep_hours`        | Daily average sleep hours               |
-| `social_media_hours` | Daily social media usage hours          |
-
-Target variable:
-
-| Feature       | Description                |
-| ------------- | -------------------------- |
-| `final_score` | Predicted final exam score |
+It uses multiple Machine Learning models and compares their performance to select the best one.
 
 ---
 
-## 3. Why Linear Regression?
+## 🧠 Problem Statement
 
-- Simple and interpretable.
-- Assumes a linear relationship between input features and the target variable.
-- Allows examination of feature **coefficients** to understand impact.
-- Can be upgraded to more advanced models if performance is poor (Polynomial Regression, Random Forest, Gradient Boosting).
+Educational institutions often want to predict student performance early to provide support.  
+This project builds a predictive model to estimate student scores based on behavioral and academic factors.
 
 ---
 
-## 4. How the Model Works
+## 📊 Dataset
 
-1. **Data Preparation**
-   - Collect historical data of students.
-   - Clean and normalize features if required.
+The dataset contains the following features:
 
-2. **Train-Test Split**
-   - Split data into training and testing sets to evaluate model performance.
-
-3. **Model Training**
-   - Train a **Linear Regression** model on the training set.
-
-4. **Prediction**
-   - Take user inputs in the Streamlit app.
-   - Predict the student’s final score using the trained model.
-
-5. **Evaluation**
-   - Evaluate model using **R² score**, **Mean Absolute Error (MAE)**, and **Root Mean Squared Error (RMSE)**.
+- `weekly_self_study_hours`
+- `attendance_percentage`
+- `class_participation`
+- `total_score` (Target)
 
 ---
 
-## 5. Streamlit Web App
+## ⚙️ Models Used
 
-The app allows users to **interactively input student data** and get predictions instantly.
+### 1️⃣ Linear Regression
 
-- Input fields:
-  - Study Hours
-  - Attendance
-  - Previous Marks
-  - Sleep Hours
-  - Social Media Hours
-- Output: Predicted final score
-- Uses a **pickle file** (`model.pkl`) to load the trained model.
+- Assumes a linear relationship between input features and output
+- Simple and fast
+- Works well when data is linear
 
 ---
 
-## Installation
+### 2️⃣ Decision Tree Regressor
 
-Follow these steps to set up and run the Student Performance Predictor app on your local machine.
+- Splits data into multiple conditions
+- Captures non-linear relationships
+- Can overfit if not controlled
 
-### 6. Clone the repository
+---
+
+### 3️⃣ Random Forest Regressor ✅ (Final Model)
+
+- Ensemble of multiple decision trees
+- Reduces overfitting
+- Handles complex patterns better
+
+---
+
+## 📈 Model Performance
+
+| Model             | MAE  | RMSE | R² Score |
+| ----------------- | ---- | ---- | -------- |
+| Linear Regression | 3.33 | 4.02 | 0.93     |
+| Decision Tree     | 4.17 | 5.70 | 0.86     |
+| Random Forest     | 3.16 | 3.96 | 0.93     |
+
+---
+
+## 🏆 Best Model: Random Forest
+
+### Why Random Forest?
+
+- Lowest RMSE → better at handling large errors
+- Highest R² → explains data well
+- More robust than Decision Tree
+- Captures non-linear relationships better than Linear Regression
+
+👉 Even though Linear Regression is close, Random Forest performs slightly better and is more reliable.
+
+---
+
+## 🚀 Features
+
+- Real-time prediction using Streamlit
+- Interactive UI with sliders
+- Instant feedback (Excellent / Average / Needs Improvement)
+- Data-driven model comparison
+
+---
+
+## 🛠 Tech Stack
+
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- Streamlit
+
+---
+
+## ▶️ Run Locally
 
 ```bash
-git clone https://github.com/Taniya1308/Student_Performance_Prediction.git
-cd Student_Performance_Prediction
+pip install -r requirements.txt
+streamlit run app.py
 ```
