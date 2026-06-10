@@ -63,7 +63,7 @@ Linear Regression was selected because:
 - Suitable for real-time applications
 
 👉 Since the dataset shows a near-linear relationship, Linear Regression performs efficiently without unnecessary complexity.
-
+s
 ---
 
 ## 🚀 Features
